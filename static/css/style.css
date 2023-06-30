@@ -1,6 +1,7 @@
 body {
   background-color: #91ced4;
 }
+
 body * {
   box-sizing: border-box;
 }
@@ -33,32 +34,42 @@ img {
 table {
   width: 100%;
 }
-table td, table th {
+
+table td,
+table th {
   color: #2b686e;
   padding: 10px;
 }
+
 table td {
   text-align: center;
   vertical-align: middle;
 }
+
 table td:last-child {
   font-size: 0.95em;
   line-height: 1.4;
   text-align: left;
 }
+
 table th {
   background-color: #daeff1;
   font-weight: 300;
 }
+
 table tr:nth-child(2n) {
   background-color: white;
 }
+
 table tr:nth-child(2n+1) {
   background-color: #edf7f8;
 }
 
 @media screen and (max-width: 700px) {
-  table, tr, td {
+
+  table,
+  tr,
+  td {
     display: block;
   }
 
@@ -66,9 +77,10 @@ table tr:nth-child(2n+1) {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     width: 100px;
   }
+
   td:not(:first-child) {
     clear: both;
     margin-left: 100px;
@@ -76,6 +88,7 @@ table tr:nth-child(2n+1) {
     position: relative;
     text-align: left;
   }
+
   td:not(:first-child):before {
     color: #91ced4;
     content: '';
@@ -83,15 +96,19 @@ table tr:nth-child(2n+1) {
     left: 0;
     position: absolute;
   }
+
   td:nth-child(2):before {
     content: 'Name:';
   }
+
   td:nth-child(3):before {
     content: 'Email:';
   }
+
   td:nth-child(4):before {
     content: 'Phone:';
   }
+
   td:nth-child(5):before {
     content: 'Comments:';
   }
@@ -100,10 +117,12 @@ table tr:nth-child(2n+1) {
     padding: 10px 0;
     position: relative;
   }
+
   tr:first-child {
     display: none;
   }
 }
+
 @media screen and (max-width: 500px) {
   .header {
     background-color: transparent;
@@ -129,19 +148,22 @@ table tr:nth-child(2n+1) {
     position: relative;
     top: 0;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     width: 100%;
   }
+
   td:not(:first-child) {
     margin: 0;
     padding: 5px 1em;
     width: 100%;
   }
+
   td:not(:first-child):before {
     font-size: .8em;
     padding-top: 0.3em;
     position: relative;
   }
+
   td:last-child {
     padding-bottom: 1rem !important;
   }
@@ -160,4 +182,82 @@ table tr:nth-child(2n+1) {
     box-shadow: none;
     overflow: visible;
   }
+}
+
+
+div.backBtn {
+  width: 100px;
+  left: 100px;
+  top: 100px;
+  background-color: #f4f4f4;
+  transition: all 0.4s ease;
+  position: fixed;
+  cursor: pointer;
+}
+
+span.line {
+  bottom: auto;
+  right: auto;
+  top: auto;
+  left: auto;
+  background-color: #333;
+  border-radius: 10px;
+  width: 100%;
+  left: 0px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: width 0.2s ease 0.1s, left 0.2s ease, transform 0.2s ease 0.3s, background-color 0.2s ease;
+}
+
+span.tLine {
+  top: 0px;
+}
+
+span.mLine {
+  top: 13px;
+  opacity: 0;
+}
+
+span.bLine {
+  top: 26px;
+}
+
+.label {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s ease;
+  font-size: 1em;
+}
+
+div.backBtn:hover span.label {
+  left: 25px
+}
+
+div.backBtn:hover span.line {
+  left: -10px;
+  height: 5px;
+  background-color: #F76060;
+}
+
+div.backBtn:hover span.tLine {
+  width: 25px;
+  transform: rotate(-45deg);
+  left: -15px;
+  top: 6px;
+}
+
+div.backBtn:hover span.mLine {
+  opacity: 1;
+  width: 30px;
+}
+
+div.backBtn:hover span.bLine {
+  width: 25px;
+  transform: rotate(45deg);
+  left: -15px;
+  top: 20px;
 }
